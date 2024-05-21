@@ -1,0 +1,31 @@
+version: "3.9cl"
+name: tech-chalenge4-dev
+services:
+
+  mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    networks:
+      - dev
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./sql/dev.sql:/data/application/init.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - dev
+
+networks:
+  dev:
+    driver: bridge

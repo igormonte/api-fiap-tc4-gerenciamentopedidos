@@ -1,0 +1,98 @@
+version: "3.9"
+name: tech-chalenge4-test
+services:
+  cliente-app:
+    image: clienteapi/latest
+    depends_on:
+      - mongodb
+    build:
+      context: ./gerenciamentopedidos.cliente
+      dockerfile: Dockerfile.dev
+    command: --spring.profiles.active=test
+    ports:
+      - "8084:8084"
+    networks:
+      - test
+
+  produto-app:
+    image: produto/latest
+    depends_on:
+      - mysql
+    build:
+      context: ./gerenciamentopedidos.produto
+      dockerfile: Dockerfile.dev
+    command: --spring.profiles.active=test
+    ports:
+      - "8083:8083"
+    networks:
+      - test
+
+  trajeto-app:
+    image: trajeto/latest
+    depends_on:
+      - mongodb
+    build:
+      context: ./gerenciamentopedidos.trajeto
+      dockerfile: Dockerfile.dev
+    command: --spring.profiles.active=test
+    ports:
+      - "8082:8082"
+    networks:
+      - test
+
+  pedidos-app:
+    image: pedidos/latest
+    depends_on:
+      - mysql
+      - produto-app
+      - cliente-app
+      - trajeto-app
+    build:
+      context: ./gerenciamentopedidos
+      dockerfile: Dockerfile.dev
+    command: --spring.profiles.active=test
+    ports:
+      - "8081:8081"
+    networks:
+      - test
+
+  gateway-app:
+    image: gateway/latest
+    depends_on:
+      - pedidos-app
+      - cliente-app
+      - produto-app
+      - trajeto-app
+    build:
+      context: ./gerenciamentopedidos.gateway
+      dockerfile: Dockerfile.dev
+    command: --spring.profiles.active=test
+    ports:
+      - "8080:8080"
+    networks:
+      - test
+
+  mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: test
+    ports:
+      - "27017:27017"
+    networks:
+      - test
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+    ports:
+      - "3306:3306"
+    networks:
+      - test
+
+networks:
+  test:
+    driver: bridge
