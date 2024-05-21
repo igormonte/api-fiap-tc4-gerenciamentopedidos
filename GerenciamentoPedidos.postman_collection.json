@@ -1,0 +1,1112 @@
+{
+	"info": {
+		"_postman_id": "a5bac536-0129-41ac-8128-7141c24607db",
+		"name": "GerenciamentoPedidos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13191053"
+	},
+	"item": [
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "buscarClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cliente.dev}}/api/cliente",
+							"host": [
+								"{{cliente.dev}}"
+							],
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarClientePorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cliente.dev}}/api/cliente?id=2dd26ff6-312c-4872-b6cb-ca66313aa268",
+							"host": [
+								"{{cliente.dev}}"
+							],
+							"path": [
+								"api",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2dd26ff6-312c-4872-b6cb-ca66313aa268"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarClientePorEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cliente.dev}}/api/cliente?email=jeremias.silva@exemplo.com",
+							"host": [
+								"{{cliente.dev}}"
+							],
+							"path": [
+								"api",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "jeremias.silva@exemplo.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvarCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Jeremias da Silva\",\r\n    \"cpf\":\"495.373.600-16\",\r\n    \"dataNascimento\":\"1990-04-23\",\r\n    \"email\":\"jeremias.silva@exemplo.com\",\r\n    \"telefone\":\"11994649999\",\r\n    \"endereco\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cliente.dev}}/api/cliente",
+							"host": [
+								"{{cliente.dev}}"
+							],
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizarCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2dd26ff6-312c-4872-b6cb-ca66313aa268\",\r\n    \"nome\":\"Jeremias da Silva\",\r\n    \"cpf\":\"495.373.600-16\",\r\n    \"dataNascimento\":\"1990-04-23\",\r\n    \"email\":\"jeremias.silva@exemplo.com\",\r\n    \"telefone\":\"11994649123\",\r\n    \"endereco\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cliente.dev}}/api/cliente",
+							"host": [
+								"{{cliente.dev}}"
+							],
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletarCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"2dd26ff6-312c-4872-b6cb-ca66313aa268\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cliente.dev}}/api/cliente",
+							"host": [
+								"{{cliente.dev}}"
+							],
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trajeto",
+			"item": [
+				{
+					"name": "buscarTrajetos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{trajeto.dev}}/api/trajeto",
+							"host": [
+								"{{trajeto.dev}}"
+							],
+							"path": [
+								"api",
+								"trajeto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarTrajetoPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{trajeto.dev}}/api/trajeto?id=5951e6b2-abb4-404c-9f7b-371a69ee61f4",
+							"host": [
+								"{{trajeto.dev}}"
+							],
+							"path": [
+								"api",
+								"trajeto"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5951e6b2-abb4-404c-9f7b-371a69ee61f4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvarTrajeto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPedido\":\"12345\",\r\n    \"descricaoMateriaisEntrega\":\"Entrega de Eletrodoméstico.\",\r\n    \"enderecoEntrega\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{trajeto.dev}}/api/trajeto",
+							"host": [
+								"{{trajeto.dev}}"
+							],
+							"path": [
+								"api",
+								"trajeto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizarTrajeto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"dbc0744e-f194-4b3c-b93f-a80a202bbec7\",\r\n    \"idPedido\":\"123456789\",\r\n    \"descricaoMateriaisEntrega\":\"Entrega de Eletrodoméstico.\",\r\n    \"enderecoEntrega\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{trajeto.dev}}/api/trajeto",
+							"host": [
+								"{{trajeto.dev}}"
+							],
+							"path": [
+								"api",
+								"trajeto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "finalizarTrajeto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"f12e20fe-8a9b-428c-a3f1-3e94029c0a48\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{trajeto.dev}}/api/trajeto/finalizar",
+							"host": [
+								"{{trajeto.dev}}"
+							],
+							"path": [
+								"api",
+								"trajeto",
+								"finalizar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "produto",
+			"item": [
+				{
+					"name": "buscarProdutos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{produto.dev}}/api/produto",
+							"host": [
+								"{{produto.dev}}"
+							],
+							"path": [
+								"api",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarProdutoPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{produto.dev}}/api/produto?id=48637886-b9f2-4c2b-aeb6-94c046c44417",
+							"host": [
+								"{{produto.dev}}"
+							],
+							"path": [
+								"api",
+								"produto"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "48637886-b9f2-4c2b-aeb6-94c046c44417"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvarProduto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Jeremias da Silva\",\r\n    \"cpf\":\"495.373.600-16\",\r\n    \"dataNascimento\":\"1990-04-23\",\r\n    \"email\":\"jeremias.silva@exemplo.com\",\r\n    \"telefone\":\"11994649999\",\r\n    \"endereco\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{produto.dev}}/api/produto",
+							"host": [
+								"{{produto.dev}}"
+							],
+							"path": [
+								"api",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizarProduto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"48637886-b9f2-4c2b-aeb6-94c046c44417\",\r\n    \"descricao\": \"TELEVISÃO 55POL SMART\",\r\n    \"categoria\": \"Eletrodomésticos\",\r\n    \"unidadeMedida\": \"UN\",\r\n    \"saldoQuantidade\": 1,\r\n    \"precoUnitario\": 1200.23,\r\n    \"taxaAplicada\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{produto.dev}}/api/produto",
+							"host": [
+								"{{produto.dev}}"
+							],
+							"path": [
+								"api",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "baixarProduto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"48637886-b9f2-4c2b-aeb6-94c046c44417\",\r\n    \"quantidade\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{produto.dev}}/api/produto/baixar",
+							"host": [
+								"{{produto.dev}}"
+							],
+							"path": [
+								"api",
+								"produto",
+								"baixar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verificarProduto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"48637886-b9f2-4c2b-aeb6-94c046c44417\",\r\n    \"quantidade\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{produto.dev}}/api/produto/disponibilidade",
+							"host": [
+								"{{produto.dev}}"
+							],
+							"path": [
+								"api",
+								"produto",
+								"disponibilidade"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pedido",
+			"item": [
+				{
+					"name": "buscarPedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{pedido.dev}}/api/pedido",
+							"host": [
+								"{{pedido.dev}}"
+							],
+							"path": [
+								"api",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarPedidoPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{pedido.dev}}/api/pedido?id=2dd26ff6-312c-4872-b6cb-ca66313aa268",
+							"host": [
+								"{{pedido.dev}}"
+							],
+							"path": [
+								"api",
+								"pedido"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2dd26ff6-312c-4872-b6cb-ca66313aa268"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criarPedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"idCliente\":\"03f7d5bf-f015-4a86-84a0-0d7ce3d1f429\",\r\n    \"item\":[{\r\n        \"idProduto\":\"794c9f73-e2fe-44b8-a9aa-27c4d32a6f77\",\r\n        \"quantidade\":1,\r\n        \"valor\":1400\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{pedido.dev}}/api/pedido",
+							"host": [
+								"{{pedido.dev}}"
+							],
+							"path": [
+								"api",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gateway",
+			"item": [
+				{
+					"name": "cliente",
+					"item": [
+						{
+							"name": "buscarClientes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/cliente-service/api/cliente",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"cliente-service",
+										"api",
+										"cliente"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "buscarClientePorId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/cliente-service/api/cliente?id=2dd26ff6-312c-4872-b6cb-ca66313aa268",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"cliente-service",
+										"api",
+										"cliente"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2dd26ff6-312c-4872-b6cb-ca66313aa268"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "buscarClientePorEmail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/cliente-service/api/cliente?email=jeremias.silva@exemplo.com",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"cliente-service",
+										"api",
+										"cliente"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "jeremias.silva@exemplo.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "salvarCliente",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\":\"Jeremias da Silva\",\r\n    \"cpf\":\"495.373.600-16\",\r\n    \"dataNascimento\":\"1990-04-23\",\r\n    \"email\":\"jeremias.silva@exemplo.com\",\r\n    \"telefone\":\"11994649999\",\r\n    \"endereco\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/cliente-service/api/cliente",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"cliente-service",
+										"api",
+										"cliente"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "atualizarCliente",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"2dd26ff6-312c-4872-b6cb-ca66313aa268\",\r\n    \"nome\":\"Jeremias da Silva\",\r\n    \"cpf\":\"495.373.600-16\",\r\n    \"dataNascimento\":\"1990-04-23\",\r\n    \"email\":\"jeremias.silva@exemplo.com\",\r\n    \"telefone\":\"11994649123\",\r\n    \"endereco\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/cliente-service/api/cliente",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"cliente-service",
+										"api",
+										"cliente"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletarCliente",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"2dd26ff6-312c-4872-b6cb-ca66313aa268\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/cliente-service/api/cliente",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"cliente-service",
+										"api",
+										"cliente"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "trajeto",
+					"item": [
+						{
+							"name": "buscarTrajetos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/trajeto-service/api/trajeto",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"trajeto-service",
+										"api",
+										"trajeto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "buscarTrajetoPorId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/trajeto-service/api/trajeto?id=5951e6b2-abb4-404c-9f7b-371a69ee61f4",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"trajeto-service",
+										"api",
+										"trajeto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5951e6b2-abb4-404c-9f7b-371a69ee61f4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "salvarTrajeto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idPedido\":\"12345\",\r\n    \"descricaoMateriaisEntrega\":\"Entrega de Eletrodoméstico.\",\r\n    \"enderecoEntrega\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/trajeto-service/api/trajeto",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"trajeto-service",
+										"api",
+										"trajeto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "atualizarTrajeto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"dbc0744e-f194-4b3c-b93f-a80a202bbec7\",\r\n    \"idPedido\":\"123456789\",\r\n    \"descricaoMateriaisEntrega\":\"Entrega de Eletrodoméstico.\",\r\n    \"enderecoEntrega\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/trajeto-service/api/trajeto",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"trajeto-service",
+										"api",
+										"trajeto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "finalizarTrajeto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"5951e6b2-abb4-404c-9f7b-371a69ee61f4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/trajeto-service/api/trajeto/finalizar",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"trajeto-service",
+										"api",
+										"trajeto",
+										"finalizar"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "produto",
+					"item": [
+						{
+							"name": "buscarProdutos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/produto-service/api/produto",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"produto-service",
+										"api",
+										"produto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "buscarProdutoPorId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/produto-service/api/produto?id=48637886-b9f2-4c2b-aeb6-94c046c44417",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"produto-service",
+										"api",
+										"produto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "48637886-b9f2-4c2b-aeb6-94c046c44417"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "salvarProduto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\":\"Jeremias da Silva\",\r\n    \"cpf\":\"495.373.600-16\",\r\n    \"dataNascimento\":\"1990-04-23\",\r\n    \"email\":\"jeremias.silva@exemplo.com\",\r\n    \"telefone\":\"11994649999\",\r\n    \"endereco\": {\r\n        \"rua\": \"Rua Exemplo\",\r\n        \"numero\": 91,\r\n        \"bairro\": \"Bairro Exemplo\",\r\n        \"cidade\": \"Cidade Exemplo\",\r\n        \"uf\": \"EX\",\r\n        \"cep\": \"0000000\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{produto.dev}}/api/produto",
+									"host": [
+										"{{produto.dev}}"
+									],
+									"path": [
+										"api",
+										"produto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "atualizarProduto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"48637886-b9f2-4c2b-aeb6-94c046c44417\",\r\n    \"descricao\": \"TELEVISÃO 55POL SMART\",\r\n    \"categoria\": \"Eletrodomésticos\",\r\n    \"unidadeMedida\": \"UN\",\r\n    \"saldoQuantidade\": 1,\r\n    \"precoUnitario\": 1200.23,\r\n    \"taxaAplicada\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/produto-service/api/produto",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"produto-service",
+										"api",
+										"produto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "baixarProduto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"48637886-b9f2-4c2b-aeb6-94c046c44417\",\r\n    \"quantidade\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/produto-service/api/produto/baixar",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"produto-service",
+										"api",
+										"produto",
+										"baixar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verificarProduto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"48637886-b9f2-4c2b-aeb6-94c046c44417\",\r\n    \"quantidade\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/produto-service/api/produto/disponibilidade",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"produto-service",
+										"api",
+										"produto",
+										"disponibilidade"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "pedido",
+					"item": [
+						{
+							"name": "buscarPedidos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/pedido-service/api/pedido",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"pedido-service",
+										"api",
+										"pedido"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "buscarPedidoPorId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gateway.dev}}/pedido-service/api/pedido?id=2dd26ff6-312c-4872-b6cb-ca66313aa268",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"pedido-service",
+										"api",
+										"pedido"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2dd26ff6-312c-4872-b6cb-ca66313aa268"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "criarPedido",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{    \r\n    \"idCliente\":\"de7cc0e5-14ea-4316-8ba4-93d7c8776e02\",\r\n    \"item\":[{\r\n        \"idProduto\":\"48637886-b9f2-4c2b-aeb6-94c046c44417\",\r\n        \"quantidade\":1,\r\n        \"valor\":1400\r\n    }]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gateway.dev}}/pedido-service/api/pedido",
+									"host": [
+										"{{gateway.dev}}"
+									],
+									"path": [
+										"pedido-service",
+										"api",
+										"pedido"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "gateway.dev",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "gateway.prod",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "pedido.dev",
+			"value": "http://localhost:8081",
+			"type": "string"
+		},
+		{
+			"key": "trajeto.dev",
+			"value": "http://localhost:8082",
+			"type": "string"
+		},
+		{
+			"key": "produto.dev",
+			"value": "http://localhost:8083",
+			"type": "string"
+		},
+		{
+			"key": "cliente.dev",
+			"value": "http://localhost:8084",
+			"type": "string"
+		}
+	]
+}
